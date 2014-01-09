@@ -1,27 +1,44 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" ng-app="gamerscafe">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0" />
-    <title>Progress Date</title>
-    <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
+<html class="no-js" lang="en" ng-app="progressdate">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0" />
+        <title>Progress Date</title>
+        <link rel="stylesheet" href="css/foundation.css" />
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        
+    </head>
+    <body>
 
-<!-- Firebase Conenctions -->
-<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+        <!--Container for the view templates-->
+        <div id="container" ng-view="">
+        </div>
 
-<!--simple login-->
-<script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+        <!-- Firebase Conenctions -->
+        <script src="https://cdn.firebase.com/v0/firebase.js"></script>
 
-<!--angular-->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+        <!--simple login-->
+        <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
 
-<!--angularFire-->
-<script src="https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.min.js"></script>
+        <!--angular-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 
-<!--Main JS-->
-<script src="js/main.js"></script>
+        <!--angularFire-->
+        <script src="https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.js"></script>
 
-</body>
+        <!--Main JS-->
+        <script src="js/main.js"></script>
+
+        <!--Foundation required-->
+        <script src="js/modernizr.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/foundation.min.js"></script>
+        <script>
+            $(document).foundation();
+        </script>
+
+        <!--Main JS-->
+        <script src="js/main.js"></script>
+    </body>
 </html>
