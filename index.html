@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="css/main.css">
         
     </head>
-    <body>
+    <body ng-controller="Login">
 
         <nav class="top-bar" data-topbar>
           <ul class="title-area">
@@ -22,7 +22,8 @@
           <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="right">
-              <li class="active fa fa-facebook-square"><a href="#">Login with Facebook</a></li>
+              <li class="active fa fa-facebook-square"><a href="" ng-click="login()" ng-hide="user">Login with Facebook</a></li>
+              <li class="active fa fa-facebook-square"><a href="" ng-click="logout()" ng-show="user">Logout</a></li>
             </ul>
 
             <!-- Left Nav Section -->
@@ -40,7 +41,7 @@
         <script src="https://cdn.firebase.com/v0/firebase.js"></script>
 
         <!--simple login-->
-        <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+        <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.0/firebase-simple-login.js'></script>
 
         <!--angular-->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
@@ -61,5 +62,11 @@
 
         <!--Main JS-->
         <script src="js/main.js"></script>
+
+        <!--Login Controller-->
+        <script src="js/controllers/Login.js"></script>
+
+        <!-- AdminLogin Controller-->
+        <script src="js/controllers/AdminLogin.js"></script>
     </body>
 </html>

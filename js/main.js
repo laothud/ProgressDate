@@ -8,7 +8,17 @@ progressdate.run(['angularFireAuth', '$rootScope', '$route', function(angularFir
 progressdate.config(function ($routeProvider){
     $routeProvider
         .when("/" , {
-            templateUrl: "partials/home.html"
+            templateUrl: "partials/home.html",
+            contoller: "Login"
+        })
+        .when("/landing",{
+        	templateUrl: "partials/user_landing.html",
+        	authRequired: true,
+        	contoller: "Calender"
+        })
+        .when("/admin",{
+        	templateUrl: "partials/admin.html",
+        	controller: "AdminLogin"
         })
         .otherwise({
         	redirectTo:"/"
