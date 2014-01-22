@@ -1,20 +1,22 @@
 <h1>Admin Login</h1>
-<form>
+<form ng-submit="login()">
   <div class="row">
     <div class="large-12 columns">
       <label>Email Address</label>
-      <input type="text" placeholder="email@domain.com" ng-model="admin.email"/>
+      <input type="text" class="error" placeholder="email@domain.com" ng-model="admin.email"/>
+      <small class="error" ng-show="adminEmailError">{{adminEmailError}}</small>
     </div>
   </div>
   <div class="row">
     <div class="large-12 columns">
       <label>Password</label>
-      <input type="password" placeholder="Password" ng-model="admin.pass"/>
+      <input type="password" class="error" placeholder="Password" ng-model="admin.pass"/>
+      <small class="error" ng-show="adminPassError">{{adminPassError}}</small>
     </div>
   </div>
   <div class="row">
     <div class="large-6 columns">
-    	<a class="button" href="" ng-click="">Login</a>
+    	<a class="button" href="" ng-click="login()">Login</a>
     </div>
   </div>
 </form>

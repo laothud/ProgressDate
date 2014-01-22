@@ -28,7 +28,8 @@
 
             <!-- Left Nav Section -->
             <ul class="left">
-              <li><a href="#/admin">Admin Login</a></li>
+              <li><a href="#/admin" ng-hide="adminUser">Admin Login</a></li>
+              <li><a href="" ng-click="logout()" ng-show="adminUser">Logout</a></li>
             </ul>
           </section>
         </nav>
@@ -68,5 +69,8 @@
 
         <!-- AdminLogin Controller-->
         <script src="js/controllers/AdminLogin.js"></script>
+
+        <!-- Calender Controller-->
+        <script src="js/controllers/Calender.js"></script>
     </body>
 </html>

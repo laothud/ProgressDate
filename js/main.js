@@ -20,6 +20,11 @@ progressdate.config(function ($routeProvider){
         	templateUrl: "partials/admin.html",
         	controller: "AdminLogin"
         })
+        .when("/adminLanding",{
+            templateUrl: "partials/admin_landing.html",
+            authRequired: true,
+            controller: "Calender"
+        })
         .otherwise({
         	redirectTo:"/"
         });
