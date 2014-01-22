@@ -1,8 +1,8 @@
 progressdate.controller('AdminLogin', ['$scope', '$routeParams', '$location', 'angularFireCollection', 'angularFireAuth','$rootScope','angularFire', 
 	function mtCtrl($scope, $routeParams, $location, angularFireCollection, angularFireAuth,$rootScope,angularFire){
 
-        var chatRef = new Firebase('https://progressdate.firebaseio.com');
-        var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
+        var dbUrl = new Firebase('https://progressdate.firebaseio.com');
+        var auth = new FirebaseSimpleLogin(dbUrl, function(error, user) {
           if (error) {
             // an error occurred while attempting login
             switch(error.code) {
@@ -38,9 +38,9 @@ progressdate.controller('AdminLogin', ['$scope', '$routeParams', '$location', 'a
     
     //logout function
     $scope.logout = function() {
+        $scope.adminUser = false;
         angularFireAuth.logout();
         $location.path('/');
-        $scope.adminUser = false;
     };
 
     //logout event

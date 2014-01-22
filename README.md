@@ -7,6 +7,8 @@ Change Log:
 
 1) 1/3/14: created github repo, set basic filestructure, downloaded all nessasary files and made this readme file.
 2) 1/6/14: created pivotal tracker for project, and updated readme file (copy of peer review setup prefilled with my information and everythin to change item 2).
+3) 1/22/14: got the login working for both facebook and the admin email is (admin@admin.com) admin pass is (admin).
+4) 1/22/14 added form validation for admin login area and adjused the css a little to make the view look correct for prototype.
 
 
 
