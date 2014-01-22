@@ -16,6 +16,8 @@ progressdate.controller('Login', ['$scope', '$routeParams', '$location', 'angula
                 //sets the user object into the rootscope
                 $rootScope.user = {};
 
+                $location.path('/landing');
+
                 var userUrl = new Firebase("https://progressdate.firebaseio.com/progressdate/users/"+userHolder.id);
 
                 angularFire(userUrl, $rootScope, 'user').then(function()
