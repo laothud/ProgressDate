@@ -1,6 +1,24 @@
 <div ng-controller="Calender">
 	<h1>Welcome {{userHolder.name}}</h1>
+	<h2 class="date">Todays date is {{todayDate}}</h2>
 	<div class="progress">
 	  <span class="meter" style="{{percent}}"></span>
 	</div>
+	<ul class="pricing-table">
+	  <li class="title">Friday(place holder for design)</li>
+	  <li class="price">{{todayDate}}</li>
+	  <li class="description">A description of what needs to be done that day</li>
+	  <li class="bullet-item">other thing 1</li>
+	  <li class="bullet-item">other thing 2</li>
+	  <li class="bullet-item">other thing 3</li>
+	</ul>
+
+	<ul class="pricing-table">
+	  <li class="title">Saturday (place holder for design)</li>
+	  <li class="price">{{todayDate}}</li>
+	  <li class="description">A description of what needs to be done that day</li>
+	  <li class="bullet-item">other thing 1</li>
+	  <li class="bullet-item">other thing 2</li>
+	  <li class="bullet-item">other thing 3</li>
+	</ul>
 </div>
