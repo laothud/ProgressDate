@@ -5,10 +5,11 @@ progressdate.controller('Login', ['$scope', '$routeParams', '$location', 'angula
         	if ($rootScope.loginInit==true) return;
         	$rootScope.loginInit=true;
 
-        	var userHolder;
-        	 $scope.$on("angularFireAuth:login", function(evt, user) {
+        	$scope.userHolder;
+
+        	$scope.$on("angularFireAuth:login", function(evt, user) {
                 if (user.provider == "facebook") {
-                    userHolder = user;
+                    $scope.userHolder = user;
                     
                     //setting a few scope variables for our user navigation
                     $scope.user = true;
@@ -18,16 +19,15 @@ progressdate.controller('Login', ['$scope', '$routeParams', '$location', 'angula
 
                     $location.path('/landing');
 
-                    var userUrl = new Firebase("https://progressdate.firebaseio.com/progressdate/users/"+userHolder.id);
+                    var userUrl = new Firebase("https://progressdate.firebaseio.com/progressdate/users/"+$scope.userHolder.id);
 
                     angularFire(userUrl, $rootScope, 'user').then(function()
                     {
-                        //if not in the database then it adds to the database
+                        //if email is not in the database then it adds to the database
                         if (Object.keys($rootScope.user).length === 0) {
-                            $rootScope.user = {"displayName": userHolder.name, "email": userHolder.email, "userType": "User", "id": userHolder.id};
+                            $rootScope.user = {"displayName": $scope.userHolder.name, "email": $scope.userHolder.email, "userType": "User", "id": $scope.userHolder.id};
                             $scope.userType = true;
                             $location.path('/landing');
-
                         }
                     });//end angularFire
                 }
