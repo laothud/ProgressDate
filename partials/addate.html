@@ -1,0 +1,37 @@
+<div ng-controller="CrudController">
+  <form ng-submit="adddate({{userHolder.id}})">
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Date:</label>
+        <input type="date" placeholder="mm/dd/yyyy" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <label>Description:</label>
+        <textarea placeholder="small-12.columns"></textarea>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="large-4 columns">
+        <label>Note 1:</label>
+        <input type="text" placeholder="large-4.columns" />
+      </div>
+
+      <div class="large-4 columns">
+        <label>Note 2:</label>
+        <input type="text" placeholder="large-4.columns" />
+      </div>
+
+      <div class="large-4 columns">
+        <label>Note 3:</label>
+        <input type="text" placeholder="large-4.columns" />
+      </div>
+
+    </div>
+  </form>
+</div>

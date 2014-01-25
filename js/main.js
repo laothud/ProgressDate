@@ -25,6 +25,11 @@ progressdate.config(function ($routeProvider){
             controller: "Calender",
             authRequired: true
         })
+        .when("/addDate",{
+            templateUrl: "partials/addate.html",
+            controller: "CrudController",
+            authRequired: true
+        })
         .otherwise({
         	redirectTo:"/"
         });

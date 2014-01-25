@@ -29,7 +29,7 @@
             <!-- Left Nav Section -->
             <ul class="left">
               <li><a href="#/admin" ng-hide="adminUser || user">Admin Login</a></li>
-              <li><a href="" ng-click="logout()" ng-hide="displayLogout">Logout</a></li>
+              <li><a href="" ng-click="logout()" ng-show="adminUser">Logout</a></li>
             </ul>
           </section>
         </nav>
@@ -72,5 +72,8 @@
 
         <!-- Calender Controller-->
         <script src="js/controllers/Calender.js"></script>
+
+        <!-- CRUD Controller-->
+        <script src="js/controllers/CrudController.js"></script>
     </body>
 </html>
