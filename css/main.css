@@ -25,3 +25,7 @@ label{
 	width: 300px;
 	float: left;
 }
+
+.error{
+	color: red;
+}

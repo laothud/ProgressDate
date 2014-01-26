@@ -8,21 +8,19 @@
 		<a href="#/addDate" class="button">Add Date</a></p>
 	</div>
 
-	<ul class="pricing-table">
-	  <li class="title">Friday(place holder for design)</li>
-	  <li class="price">{{todayDate}}</li>
-	  <li class="description">A description of what needs to be done that day</li>
-	  <li class="bullet-item">other thing 1</li>
-	  <li class="bullet-item">other thing 2</li>
-	  <li class="bullet-item">other thing 3</li>
-	</ul>
-
-	<ul class="pricing-table">
-	  <li class="title">Saturday (place holder for design)</li>
-	  <li class="price">{{todayDate}}</li>
-	  <li class="description">A description of what needs to be done that day</li>
-	  <li class="bullet-item">other thing 1</li>
-	  <li class="bullet-item">other thing 2</li>
-	  <li class="bullet-item">other thing 3</li>
-	</ul>
+	<div ng-controller="CrudController">
+		<div ng-repeat="date in dates | orderBy:'dateOfItem' | filter:userHolder.id">
+				<ul class="pricing-table">
+				<li class="title">{{date.dateOfItem}}</li>
+				<li class="description">{{date.description}}</li>
+				<li class="bullet-item">{{date.noteOne}}</li>
+				<li class="bullet-item">{{date.noteTwo}}</li>
+				<li class="bullet-item">{{date.noteThree}}</li>
+				<li class="bullet-item">
+					<a href="" ng-click"updatedate()">update</a> 
+				  	<a href="" class="error" ng-click"removedate()">delete</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 </div>

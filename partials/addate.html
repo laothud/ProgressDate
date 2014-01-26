@@ -1,4 +1,7 @@
 <form ng-submit="addDate({{userHolder.id}})">
+  <div class="row" ng-show="addError">
+    <small class="error">Please complete the entire form</small>
+  </div> 
   <div class="row">
     <div class="large-12 columns">
       <label>Date:</label>
@@ -11,7 +14,7 @@
   <div class="row">
     <div class="large-12 columns">
       <label>Description:</label>
-      <textarea placeholder="A short description of the event or task." ng-model="newDate.description"></textarea>
+      <textarea placeholder="A short description of the event or task." ng-model="newDate.descript"></textarea>
     </div>
   </div>
 
