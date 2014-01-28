@@ -1,11 +1,14 @@
-progressdate.controller('CrudController', ['$scope', '$routeParams', '$location', 'angularFireCollection', 'angularFireAuth','$rootScope','angularFire', 
-	function mtCtrl($scope, $routeParams, $location, angularFireCollection, angularFireAuth,$rootScope,angularFire){
+progressdate.controller('CrudController', ['$scope', '$routeParams', '$location', '$firebase',
+	function ($scope, $routeParams, $location, $rootScope, $firebase){
 
 	console.log("Crud loaded");
 
 	//collects the info from the database for use.
 	var dateURL = new Firebase("https://progressdate.firebaseio.com/progressdate/dates");
-	$scope.dates = angularFireCollection(dateURL);
+	dateURL.on('value', function(snapshot) {
+		console.log(snapshot.val());
+		$scope.dates = snapshot.val();
+	});
 
 	//add date
 	$scope.addDate = function(){

@@ -1,5 +1,5 @@
-progressdate.controller('Calender', ['$scope', '$routeParams', '$location', 'angularFireCollection', 'angularFireAuth','$rootScope','angularFire', 
-	function($scope, $routeParams, $location, angularFireCollection, angularFireAuth,$rootScope,angularFire){
+progressdate.controller('Calender', ['$scope', '$routeParams', '$location', '$rootScope',
+	function($scope, $routeParams, $location, $rootScope){
 
 	//progress bar setion
 	var today = new Date();

@@ -1,5 +1,5 @@
-progressdate.controller('AdminLogin', ['$scope', '$routeParams', '$location', 'angularFireCollection', 'angularFireAuth','$rootScope','angularFire', 
-	function mtCtrl($scope, $routeParams, $location, angularFireCollection, angularFireAuth,$rootScope,angularFire){
+progressdate.controller('AdminLogin', ['$scope', '$routeParams', '$location', '$rootScope', '$firebase',
+	function ($scope, $routeParams, $location, $rootScope, $firebase){
         $scope.displayLogout = true;
         var dbUrl = new Firebase('https://progressdate.firebaseio.com');
         var auth = new FirebaseSimpleLogin(dbUrl, function(error, user) {
@@ -30,7 +30,7 @@ progressdate.controller('AdminLogin', ['$scope', '$routeParams', '$location', 'a
     //login function
     $scope.login = function() {
     	console.log("login clicked");
-        angularFireAuth.login('password', {
+        auth.login('password', {
 			   email: $scope.admin.email,
 			   password: $scope.admin.pass
         });
@@ -39,7 +39,7 @@ progressdate.controller('AdminLogin', ['$scope', '$routeParams', '$location', 'a
     //logout function
     $scope.logout = function() {
         $scope.displayLogout = null;
-        angularFireAuth.logout();
+        auth.logout();
         $location.path('/');
     };
 
