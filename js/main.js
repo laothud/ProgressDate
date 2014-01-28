@@ -30,6 +30,10 @@ progressdate.config(function ($routeProvider){
             controller: "CrudController",
             authRequired: true
         })
+        .when("/update",{
+            templateUrl: "partials/updatedate.html",
+            authRequired: true
+        })
         .otherwise({
         	redirectTo:"/"
         });

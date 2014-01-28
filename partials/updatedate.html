@@ -1,0 +1,45 @@
+<form ng-submit="updateDate()">
+  <div class="row" ng-show="addError">
+    <small class="error">Please complete the entire form</small>
+  </div> 
+  <div class="row">
+    <div class="large-12 columns">
+      <label>Date:</label>
+      <input type="date" ng-model="updateDate.dateOfItem" value="{{update.dateOfItem}}"/>
+    </div>
+  </div>
+
+  <input type="hidden" ng-model="updateDate.$id" value="{{updateDate.$id}}"/>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <label>Description:</label>
+      <textarea  ng-model="updateDate.descript" value="{{updateDate.descript}}"></textarea>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="large-4 columns">
+      <label>Note 1:</label>
+      <input type="text" ng-model="updateDate.noteOne" value="{{updateDate.noteOne}}"/>
+    </div>
+
+    <div class="large-4 columns">
+      <label>Note 2:</label>
+      <input type="text" ng-model="updateDate.noteTwo" value="{{updateDate.noteTwo}}"/>
+    </div>
+
+    <div class="large-4 columns">
+      <label>Note 3:</label>
+      <input type="text" ng-model="updateDate.noteThree" value="{{updateDate.noteThree}}"/>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="large-6 columns">
+      <a class="button" href="" ng-click="update()">Update Date</a>
+    </div>  
+  </div>
+</form>
