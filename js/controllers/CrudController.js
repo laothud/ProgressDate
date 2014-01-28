@@ -5,10 +5,12 @@ progressdate.controller('CrudController', ['$scope', '$routeParams', '$location'
 
 	//collects the info from the database for use.
 	var dateURL = new Firebase("https://progressdate.firebaseio.com/progressdate/dates");
-	dateURL.on('value', function(snapshot) {
-		console.log(snapshot.val());
-		$scope.dates = snapshot.val();
-	});
+	// dateURL.on('value', function(snapshot) {
+	// 	console.log(snapshot.val());
+	// 	$scope.dates = snapshot.val();
+	// });
+
+	$scope.dates = $firebase(dateURL);
 
 	//add date
 	$scope.addDate = function(){
